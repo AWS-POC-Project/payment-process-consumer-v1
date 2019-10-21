@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+  <p> 
+  Dear <span th:text=  "${cardMemberName}" ></span></p>
+  <p>
+  Your bank statement for the month of <span th:text=  "${statementMonth}" ></span> has been generated. 
+  As per the statement, your minimum due is <span th:text=  "${minDue}" ></span> and the total due amount is <span th:text="${statementBalance}" ></span>.
+  Kindly make the payment on or before <span th:text=  "${paymentDueDate}" ></span>
+  </p>
+  <p>*Please do not reply as this is a system generated email.</p>
+</body>
+</html>

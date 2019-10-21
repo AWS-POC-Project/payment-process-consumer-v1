@@ -1,0 +1,34 @@
+package rules;
+
+import com.citizens.process.payment.model.PaymentProcess;
+import java.util.List;
+import java.util.ArrayList;
+
+global java.lang.String channel;
+
+dialect "java"
+
+rule "Determine Notification channel - Email"
+
+	when
+		paymentProcessObject : PaymentProcess(lob == "Consumer Banking")
+	then 
+
+		paymentProcessObject.setChannel("email");
+		channel = "email";
+end
+		
+rule "Determine Notification channel - sms"
+	when
+		paymentProcessObject : PaymentProcess(lob == "sms")
+		
+	then 
+		
+		paymentProcessObject.setChannel("sms");
+	
+end
+
+
+
+
+
